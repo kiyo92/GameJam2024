@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b96fa8db6e2f3241bbf153c8a054b25, type: 3}
+  m_Name: Flamethrower
+  m_EditorClassIdentifier: 
+  displayName: Flamethrower
+  typeOfWeapon: 1
+  totalAmmo: 200
+  clipSize: 100
+  reloadTime: 3
+  shootFrequency: 0.05
+  accuracy: 5
+  burstAmount: 0
+  playerKnockback: 0
+  enemyKnockback: 0
+  projectile: {fileID: 11400000, guid: 5812137755c090443a9493f39dae5c9c, type: 2}
+  shootSFX: {fileID: 8300000, guid: 72bf5784a663a1147b9d1e1c143cfdee, type: 3}
+  visual: {fileID: 1810994500837878, guid: bbff855987d23dd41993a0d9a8716977, type: 2}
+  droppedPickup: {fileID: 1515138041044608, guid: 9eeaeba7805e82b4793734cc1a9e930b,
+    type: 2}
+  uiIcon: {fileID: 21300000, guid: c1107a7031363d1419e05421214d4b9f, type: 3}
+  offsets:
+    positionOffset: {x: 0, y: 0.1, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+  purchaseCost: 800
+  upgrades:
+  - cost: 500
+    reloadTime: 1
+    shootFrequency: 0
+    accuracy: 0
+    burstAmount: 0
+    clipSize: 150
+    playerKnockback: 0
+    enemyKnockback: 0

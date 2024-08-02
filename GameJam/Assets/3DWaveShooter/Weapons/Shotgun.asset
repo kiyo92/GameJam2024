@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b96fa8db6e2f3241bbf153c8a054b25, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  displayName: Shotgun
+  typeOfWeapon: 0
+  totalAmmo: 20
+  clipSize: 2
+  reloadTime: 1
+  shootFrequency: 0.5
+  accuracy: 5
+  burstAmount: 0
+  playerKnockback: 0
+  enemyKnockback: 5
+  projectile: {fileID: 11400000, guid: ce6144098f1fa214ba9fe18750451884, type: 2}
+  shootSFX: {fileID: 8300000, guid: 66b4607b5756ed841ba503ad98abd711, type: 3}
+  visual: {fileID: 1525420930941192, guid: 553914f4fb2b4ec4da6606b6e45e09cb, type: 2}
+  droppedPickup: {fileID: 1510453623297940, guid: ec77874cb98d08349a238b935e836e61,
+    type: 2}
+  uiIcon: {fileID: 21300000, guid: 07f95a05fb6d5e84b88f01c5e68bf23d, type: 3}
+  offsets:
+    positionOffset: {x: 0, y: 0.1, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+  purchaseCost: 150
+  upgrades:
+  - cost: 200
+    reloadTime: 1.2
+    shootFrequency: 0.5
+    accuracy: 0
+    burstAmount: 0
+    clipSize: 3
+    playerKnockback: 0
+    enemyKnockback: 6
+  - cost: 250
+    reloadTime: 0
+    shootFrequency: 0.4
+    accuracy: 0
+    burstAmount: 0
+    clipSize: 4
+    playerKnockback: 0
+    enemyKnockback: 0
+  - cost: 500
+    reloadTime: 2
+    shootFrequency: 0
+    accuracy: 0
+    burstAmount: 0
+    clipSize: 6
+    playerKnockback: 0
+    enemyKnockback: 0

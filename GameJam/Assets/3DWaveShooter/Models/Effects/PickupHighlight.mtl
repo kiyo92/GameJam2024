@@ -1,0 +1,5 @@
+newmtl PickupHighlight
+map_Kd D:/Unity Project Backups/3DWaveShooter/Assets/3DWaveShooter/Sprites/PickupHighlight.png
+Kd 0 0.5019608 1
+d 0.6352941
+
