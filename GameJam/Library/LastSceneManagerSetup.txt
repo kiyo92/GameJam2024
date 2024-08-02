@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/ToonyTinyPeople/TT_demo/sample_scene/TT_Citizens_sample_scene.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
