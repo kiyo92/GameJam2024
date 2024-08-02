@@ -18,9 +18,6 @@ public class LevelDataScriptableObject : ScriptableObject
     [Tooltip("Is this level locked at the start of the game? Requiring another level to be completed in order to play this one.")]
     public bool lockedAtStart;
 
-    [Tooltip("Level Data of the level that needs to be completed, in order for this one to be unlocked.")]
-    public LevelDataScriptableObject levelNeededToCompleteToUnlock;
-
         [Foldout("Waves", true)]
 
     [Tooltip("Waves for the level.")]

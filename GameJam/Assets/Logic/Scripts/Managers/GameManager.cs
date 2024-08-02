@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    public CameraFollow cameraFollowSettings;
     public LevelDataScriptableObject level; //Level data file that relates to this scene.
     public int waveCountdownTime = 5;       //How long is the countdown before wave starts?
     public float curWaveTime;
@@ -91,25 +92,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetCameraLevel() {
+        cameraFollowSettings.SetCameraLevel(level: 2);
+    }
+
     //Called when all waves have been killed off.
     public void WinGame ()
     {
-        //Set the win status to player prefs.
-        PlayerPrefs.SetInt("LevelCompleted_" + level.sceneName, 1);
-        GameUI.inst.SetEndGameText(true);
-        Invoke("ReturnToMenu", 5.0f);
+        // Show win screen
+        //PlayerPrefs.SetInt("LevelCompleted_" + level.sceneName, 1);
+        //GameUI.inst.SetEndGameText(true);
+        //Invoke("ReturnToMenu", 5.0f);
     }
 
     //Called when the player dies.
     public void LoseGame ()
     {
-        GameUI.inst.SetEndGameText(false);
-        Invoke("ReturnToMenu", 5.0f);
+        // Show menu game over
     }
 
     //Loads the menu scene.
     void ReturnToMenu ()
     {
-        SceneManager.LoadScene(0);
+        // Show initial menu
     }
 }

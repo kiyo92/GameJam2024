@@ -35,4 +35,15 @@ public class CameraFollow : MonoBehaviour
         //Set the camera's position.
         transform.position = (target.transform.position + offset) + (-transform.forward * distance);
     }
+
+    public void SetCameraLevel(int level) {
+        if (level == 2)
+        {
+            distance = 35;
+        }
+        else if (level == 3)
+        {
+
+        }
+    }
 }

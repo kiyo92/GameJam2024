@@ -126,10 +126,6 @@ public class MenuUI : MonoBehaviour
 
             if(!levels[x].lockedAtStart)
                 unlocked = true;
-            else
-            {
-                unlocked = PlayerPrefs.GetInt("LevelCompleted_" + levels[x].levelNeededToCompleteToUnlock.sceneName) == 0 ? false : true;
-            }
 
             levelsUnlocked[x] = unlocked;
         }
