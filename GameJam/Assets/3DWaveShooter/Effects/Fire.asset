@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f8638532938f141ae0a51838a2208a, type: 3}
+  m_Name: Fire
+  m_EditorClassIdentifier: 
+  effectType: 0
+  displayName: Fire
+  description: Damages entity over time.
+  duration: 3
+  damageOverTime: 1
+  damageOverTimeOptions:
+    damage: 2
+    damageRate: 1
+  explosive: 0
+  explosiveOptions:
+    explosiveDamage: 0
+    explosiveRange: 0
+    explosiveForce: 0
+    explosiveDamageDropOff: 0
+  tempStatChange: 0
+  tempStatChangeOptions:
+    statToChange: 0
+    statModifier: 1
+  effectParticle: {fileID: 1758936148131674, guid: 7d0b3a363481f724b8d51f76715912e6,
+    type: 2}

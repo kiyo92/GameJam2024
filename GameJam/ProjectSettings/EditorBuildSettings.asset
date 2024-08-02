@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/3DWaveShooter/Scenes/Menu.unity
+    guid: 0952ba1e92ad5ac42822d51fde4c638c
+  - enabled: 1
+    path: Assets/3DWaveShooter/Scenes/Levels/Forest.unity
+    guid: 270a77a9646903e42844d1991689e44e
+  - enabled: 1
+    path: Assets/3DWaveShooter/Scenes/Levels/City.unity
+    guid: 460b4272574c7f945a0b02f8ad4f3078
   m_configObjects: {}

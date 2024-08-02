@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f8638532938f141ae0a51838a2208a, type: 3}
+  m_Name: TempSlow
+  m_EditorClassIdentifier: 
+  effectType: 2
+  displayName: Slow
+  description: Slows the entity for a short amount of time.
+  duration: 0.1
+  damageOverTime: 0
+  damageOverTimeOptions:
+    damage: 0
+    damageRate: 0
+  explosive: 0
+  explosiveOptions:
+    explosiveDamage: 0
+    explosiveRange: 0
+    explosiveForce: 0
+    explosiveDamageDropOff: 0
+  tempStatChange: 1
+  tempStatChangeOptions:
+    statToChange: 0
+    statModifier: 0.5
+  effectParticle: {fileID: 0}

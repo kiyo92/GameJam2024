@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce6b7a841f4104478c24923c993bbde, type: 3}
+  m_Name: Rocket
+  m_EditorClassIdentifier: 
+  type: 1
+  damage: 0
+  speed: 15
+  destroyTime: 5
+  raycastLength: 0
+  shootMultipleProjectiles: 0
+  multipleProjectiles:
+    projectileCount: 2
+    projectileSpreadAngle: 30
+  projectilePrefab: {fileID: 1065023162021298, guid: 15d2510328318e541ac41ee0a16eb5d8,
+    type: 2}
+  drawTrail: 0
+  trail:
+    trailColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  applyEffects: 1
+  effectsToApply:
+  - {fileID: 11400000, guid: 804ea276db638a34b80820e8d60ed8eb, type: 2}

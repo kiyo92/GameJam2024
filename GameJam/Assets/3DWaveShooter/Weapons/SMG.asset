@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b96fa8db6e2f3241bbf153c8a054b25, type: 3}
+  m_Name: SMG
+  m_EditorClassIdentifier: 
+  displayName: SMG
+  typeOfWeapon: 1
+  totalAmmo: 160
+  clipSize: 20
+  reloadTime: 1
+  shootFrequency: 0.1
+  accuracy: 5
+  burstAmount: 0
+  playerKnockback: 1
+  enemyKnockback: 1
+  projectile: {fileID: 11400000, guid: b519f1700f3a5c64dbaf5415cfd25cca, type: 2}
+  shootSFX: {fileID: 8300000, guid: 343542f0a8dfb41408e4aa05dbed4b16, type: 3}
+  visual: {fileID: 1931742466283784, guid: 2ce7e76f48beb174081b2234b7ab2787, type: 2}
+  droppedPickup: {fileID: 1760717421640426, guid: 2a3d60b2dffc4a44b887b188e2368119,
+    type: 2}
+  uiIcon: {fileID: 21300000, guid: 5151ced1ba088df4cbb8791c60e99639, type: 3}
+  offsets:
+    positionOffset: {x: 0, y: 0.1, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+  purchaseCost: 500
+  upgrades:
+  - cost: 250
+    reloadTime: 0.8
+    shootFrequency: 0.08
+    accuracy: 5
+    burstAmount: 0
+    clipSize: 25
+    playerKnockback: 0
+    enemyKnockback: 0
+  - cost: 500
+    reloadTime: 0.7
+    shootFrequency: 0.05
+    accuracy: 3
+    burstAmount: 0
+    clipSize: 30
+    playerKnockback: 0
+    enemyKnockback: 0
+  - cost: 800
+    reloadTime: 0.7
+    shootFrequency: 0.05
+    accuracy: 3
+    burstAmount: 0
+    clipSize: 40
+    playerKnockback: 0
+    enemyKnockback: 0

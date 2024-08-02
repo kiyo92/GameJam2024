@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce6b7a841f4104478c24923c993bbde, type: 3}
+  m_Name: ShotgunPellet
+  m_EditorClassIdentifier: 
+  type: 0
+  damage: 2
+  speed: 0
+  destroyTime: 2
+  raycastLength: 8
+  shootMultipleProjectiles: 1
+  multipleProjectiles:
+    projectileCount: 4
+    projectileSpreadAngle: 8
+  projectilePrefab: {fileID: 0}
+  drawTrail: 1
+  trail:
+    trailColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  applyEffects: 1
+  effectsToApply:
+  - {fileID: 11400000, guid: ad91b8dbdf27c5544963890d2ac95d4a, type: 2}

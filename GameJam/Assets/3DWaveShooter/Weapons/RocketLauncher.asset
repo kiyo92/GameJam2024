@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b96fa8db6e2f3241bbf153c8a054b25, type: 3}
+  m_Name: RocketLauncher
+  m_EditorClassIdentifier: 
+  displayName: Rocket Launcher
+  typeOfWeapon: 0
+  totalAmmo: 4
+  clipSize: 1
+  reloadTime: 2
+  shootFrequency: 0.1
+  accuracy: 5
+  burstAmount: 0
+  playerKnockback: 2
+  enemyKnockback: 0
+  projectile: {fileID: 11400000, guid: dce7907ac76ef404c81e90b2b67426af, type: 2}
+  shootSFX: {fileID: 8300000, guid: 72bf5784a663a1147b9d1e1c143cfdee, type: 3}
+  visual: {fileID: 1735119306493068, guid: 53099c73cf95ace4687906b2bab4edf1, type: 2}
+  droppedPickup: {fileID: 1183243525949116, guid: 6571be5f6aee30b4fb90bef9f695e6d8,
+    type: 2}
+  uiIcon: {fileID: 21300000, guid: 05860394bd56b6b45a08f9f09f37737c, type: 3}
+  offsets:
+    positionOffset: {x: 0, y: 0.1, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+  purchaseCost: 800
+  upgrades:
+  - cost: 500
+    reloadTime: 0
+    shootFrequency: 0
+    accuracy: 0
+    burstAmount: 0
+    clipSize: 2
+    playerKnockback: 0
+    enemyKnockback: 0
+  - cost: 800
+    reloadTime: 0
+    shootFrequency: 0
+    accuracy: 0
+    burstAmount: 0
+    clipSize: 4
+    playerKnockback: 0
+    enemyKnockback: 0
