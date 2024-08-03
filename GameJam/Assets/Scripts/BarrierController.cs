@@ -5,7 +5,6 @@ using UnityEngine;
 public class BarrierController : MonoBehaviour
 {
     public GameObject player;
-    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +22,9 @@ public class BarrierController : MonoBehaviour
 
     public void ShowBlockedWayFeedback() {
 
+    }
+
+    public void RemoveLimits() {
+        Destroy(gameObject);
     }
 }

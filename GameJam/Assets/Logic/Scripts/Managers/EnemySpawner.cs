@@ -42,8 +42,8 @@ public class EnemySpawner : MonoBehaviour
         //If we have cur enemies from last wave, destroy them.
         if(curEnemies.Count > 0)
         {
-            for(int x = 0; x < curEnemies.Count; ++x)
-                curEnemies[x].GetComponent<Enemy>().SinkAndDestroy();
+            //for(int x = 0; x < curEnemies.Count; ++x)
+                //curEnemies[x].GetComponent<Enemy>().SinkAndDestroy();
         }
 
         curEnemies.Clear();

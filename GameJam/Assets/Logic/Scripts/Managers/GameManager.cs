@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    public BarrierController barrierController;
     public CameraFollow cameraFollowSettings;
     public LevelDataScriptableObject level; //Level data file that relates to this scene.
     public int waveCountdownTime = 5;       //How long is the countdown before wave starts?
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckBarrierFeedbackStatus()
     {
-        if (isShowingBarrierFeedback) {
+        if (isShowingBarrierFeedback && curWave < 1) {
             // TODO Chamar UI de aproximação de limites
         }
     }
@@ -69,7 +70,10 @@ public class GameManager : MonoBehaviour
         ShopUI.inst.ToggleShop(false);
         curWaveTime = 0.0f;
         curWave = EnemySpawner.inst.nextWaveIndex + 1;
-
+        if (curWave > 1) {
+            SetCameraLevel();
+            //barrierController.RemoveLimits();
+        }
         GameUI.inst.StartCoroutine("SetWaveCountdownText", waveCountdownTime);
         Invoke("StartNextWave", waveCountdownTime + 1);
     }
@@ -106,7 +110,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void SetCameraLevel() {
-        cameraFollowSettings.SetCameraLevel(level: 2);
+        cameraFollowSettings.SetCameraLevel(level: curWave);
     }
 
     //Called when all waves have been killed off.
