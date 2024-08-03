@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Follows a target object.
-/// </summary>
+
 public class CameraFollow : MonoBehaviour
 {
     [Header("Values")]
-    public GameObject target;           //GameObject that the camera will follow.
-    public float distance;              //Distance between the object and camera.
-    public Vector3 rotation;            //Camera rotation.
-    public Vector3 offset;              //Offset from target object.
+    public GameObject target;
+    public float distance;
+    public Vector3 rotation;
+    public Vector3 offset;
 
     void Start ()
     {
@@ -21,12 +19,12 @@ public class CameraFollow : MonoBehaviour
 
     void Update ()
     {
-        //If we have a target, follow them.
+
         if(target)
             FollowTarget();
     }
 
-    //Follows the target object.
+
     void FollowTarget ()
     {
         //Set the camera's rotation.

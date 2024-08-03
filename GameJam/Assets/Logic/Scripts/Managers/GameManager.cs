@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int waveCountdownTime = 5;       //How long is the countdown before wave starts?
     public float curWaveTime;
     public int curWave;
+    public bool isShowingBarrierFeedback;
 
     [Header("Bools")]
     public bool waveInProgress;
@@ -41,6 +42,18 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene(0);
+    }
+
+    private void LateUpdate()
+    {
+        CheckBarrierFeedbackStatus();
+    }
+
+    public void CheckBarrierFeedbackStatus()
+    {
+        if (isShowingBarrierFeedback) {
+            // TODO Chamar UI de aproximação de limites
+        }
     }
 
     //Called when the game starts.
