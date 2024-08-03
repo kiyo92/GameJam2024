@@ -48,8 +48,8 @@ public class Enemy : MonoBehaviour
         state = EnemyState.Chasing;
         anim.SetBool("Moving", true);
 
-        transform.Find("EnemyModel").localPosition = Vector3.zero;
-        transform.Find("EnemyModel").localEulerAngles = new Vector3(0, 90, 0);
+        //transform.Find("EnemyModel").localPosition = Vector3.zero;
+        //transform.Find("EnemyModel").localEulerAngles = new Vector3(0, 90, 0);
         anim.SetTrigger("Respawn");
 
         ai.target = Player.inst.gameObject;

@@ -29,7 +29,8 @@ public class EnemyAI : MonoBehaviour
     void Start ()
     {
         //Get missing components.
-        if(!enemy) enemy = GetComponent<Enemy>();
+        if(targetType == TargetType.Player) target = GameObject.FindWithTag("Player");
+        if (!enemy) enemy = GetComponent<Enemy>();
         if(!rig) rig = GetComponent<Rigidbody>();
         if(!agent) GetComponent<NavMeshAgent>();
     }

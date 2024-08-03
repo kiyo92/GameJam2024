@@ -18,6 +18,7 @@ public class MeshSetter : MonoBehaviour
     //Sets the mesh renderers to have their default enemy materials.
     public void SetDefaultMaterial ()
     {
+        /*
         foreach(MeshRenderer mr in meshRenderers)
         {
             if(mr.gameObject.name.Contains("Torso"))
@@ -25,5 +26,6 @@ public class MeshSetter : MonoBehaviour
             else
                 mr.material = defaultMaterial;
         }
+        */
     }
 }
