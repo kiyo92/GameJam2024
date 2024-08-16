@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -16,16 +17,16 @@ MonoBehaviour:
   totalAmmo: 300
   clipSize: 25
   reloadTime: 1
-  shootFrequency: 0.05
-  accuracy: 3
+  shootFrequency: 0.35
+  accuracy: 5
   burstAmount: 0
   playerKnockback: 0
   enemyKnockback: 1.5
   projectile: {fileID: 11400000, guid: b519f1700f3a5c64dbaf5415cfd25cca, type: 2}
   shootSFX: {fileID: 8300000, guid: e7df938455ce00d4f9fdeb2c60ac6df1, type: 3}
-  visual: {fileID: 1982880657110526, guid: a2527d429c4af5d44977d48879a0b702, type: 2}
+  visual: {fileID: 1982880657110526, guid: a2527d429c4af5d44977d48879a0b702, type: 3}
   droppedPickup: {fileID: 1515138041044608, guid: 9eeaeba7805e82b4793734cc1a9e930b,
-    type: 2}
+    type: 3}
   uiIcon: {fileID: 21300000, guid: 57ca559c166190a42be8dada54ece701, type: 3}
   offsets:
     positionOffset: {x: 0, y: 0.1, z: 0}

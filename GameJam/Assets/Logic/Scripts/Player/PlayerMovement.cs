@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
     void Look ()
     {
         //Are we playing on desktop?
-        if(!MobileControls.inst.enableMobileControls)
+        if (!MobileControls.inst.enableMobileControls)
         {
             //Create a plane and shoot a raycast at it to get the world position of our mouse cursor.
             Plane rayPlane = new Plane(Vector3.up, transform.position);
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
             float rayDist;
             Vector3 worldPos = Vector3.zero;
 
-            if(rayPlane.Raycast(ray, out rayDist))
+            if (rayPlane.Raycast(ray, out rayDist))
                 worldPos = ray.GetPoint(rayDist);
 
             //Get the direction of it relative to the player.
@@ -112,6 +112,12 @@ public class PlayerMovement : MonoBehaviour
 
             //Set the angle to be the player's Y rotation.
             transform.rotation = Quaternion.Euler(transform.rotation.x, angle, transform.rotation.z);
+        }
+        else if (MobileControls.inst.enableMobileControls && Player.inst.currentEnemy != null) {
+            Vector3 targetPostition = new Vector3(Player.inst.currentEnemy.transform.position.x,
+                                       transform.position.y,
+                                       Player.inst.currentEnemy.transform.position.z);
+            transform.LookAt(targetPostition);
         }
         //Are we playing on mobile?
         else

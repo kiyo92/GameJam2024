@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
     public AudioSource audioSource;                 //Player's Audio Source component.
     public Animator anim;                           //Player's Animator component.
     public MeshSetter meshSetter;                   //Player's MeshSetter.cs component.
+    
+    [Header("Enemy")]
+    public GameObject currentEnemy;
 
     //Instance
     public static Player inst;                      //We create an instance (singelton) of the player so that it can be accessed from anywhere.
@@ -228,6 +231,11 @@ public class Player : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         //mr.material.color = defaultColor;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
     }
 }
 

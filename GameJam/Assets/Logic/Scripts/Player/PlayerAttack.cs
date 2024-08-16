@@ -16,7 +16,14 @@ public class PlayerAttack : MonoBehaviour
     private int curBurstProjectilesShot;                //Num of bullets shot in current burst.
 
     void Update ()
-    { 
+    {
+
+        if (MobileControls.inst.enableMobileControls && MobileControls.inst.movementJoystick.canAttack) {
+            if (Player.inst.currentEnemy) {
+                TryToUseWeapon(false);
+            }
+        }
+
         //Mobile controls for shooting.
         if(MobileControls.inst.enableMobileControls)
         {

@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     public Animator anim;               //Enemy's Animator component.
     public Material defaultMaterial;    //Enemy's default material.
     public MeshSetter meshSetter;       //Enemy's MeshSetter.cs component.
+    public GameObject hightlight;
 
     void Start ()
     {
@@ -38,6 +39,15 @@ public class Enemy : MonoBehaviour
         if(!audioSource) audioSource = GetComponent<AudioSource>();
         if(!anim) anim = transform.Find("EnemyModel").GetComponent<Animator>();
         if(!meshSetter) meshSetter = GetComponent<MeshSetter>();
+    }
+
+    private void Update()
+    {
+        if (Player.inst.currentEnemy == gameObject) {
+            hightlight.SetActive(true);
+            return;
+        }
+        hightlight.SetActive(false);
     }
 
     //Sets up the enemy as if they've just been spawned.
