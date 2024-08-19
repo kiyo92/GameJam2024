@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     [Header("Health")]
-    public Image healthBarSlider;
-    public Image healthBarBackground;
-    private bool flashingHealthBar;
+    public Slider healthBarSlider;
 
     public Text playerMoneyText;
     public GameObject openShopButton;
@@ -41,7 +39,7 @@ public class GameUI : MonoBehaviour
         if(Player.inst.curWeapon != null)
         {
             ammoInClipText.text = Player.inst.curWeapon.curAmmoInClip.ToString();
-            totalAmmoText.text = Player.inst.curWeapon.curAmmo.ToString();
+            totalAmmoText.text = "/" + Player.inst.curWeapon.curAmmo.ToString();
         }
     }
 
@@ -87,26 +85,10 @@ public class GameUI : MonoBehaviour
     public void UpdateHealthBar ()
     {
         float rate = 1.0f / Player.inst.maxHp;
-        healthBarSlider.fillAmount = rate * Player.inst.curHp;
+        healthBarSlider.value = rate * Player.inst.curHp;
 
         //if(!flashingHealthBar)
         //   StartCoroutine(HealthBarFlash());
-    }
-
-    IEnumerator HealthBarFlash ()
-    {
-        flashingHealthBar = true;
-
-        Color c = healthBarBackground.color;
-        healthBarBackground.color = Color.red;
-
-        while(healthBarBackground.color != c)
-        {
-            healthBarBackground.color = Color.Lerp(healthBarBackground.color, c, 15 * Time.deltaTime);
-            yield return null;
-        }
-
-        flashingHealthBar = false;
     }
 
     //Updates the visuals on the equipped weapon icons.

@@ -37,7 +37,7 @@ public class CameraFollow : MonoBehaviour
     public void SetCameraLevel(int level) {
         if (level == 2)
         {
-            distance = 25;
+            distance = 40;
         }
         else if (level == 3)
         {

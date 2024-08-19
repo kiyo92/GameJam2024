@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
@@ -21,6 +22,9 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     public RectTransform background;
     public RectTransform handle;
 
+    public Image ring;
+    public Image knob;
+
     [Header("Attack Controller")]
     public bool canAttack = false;
 
@@ -38,7 +42,10 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
         {
             if (Input.GetTouch(i).phase == TouchPhase.Began)
             {
-
+                var tempColor = ring.color;
+                tempColor.a = 1f;
+                ring.color = tempColor;
+                knob.color = tempColor;
                 // assign new position to where finger was pressed
                 background.position = new Vector3(Input.GetTouch(i).position.x, Input.GetTouch(i).position.y, transform.position.z);
                 joystickPosition = new Vector3(Input.GetTouch(i).position.x, Input.GetTouch(i).position.y, transform.position.z);
@@ -52,10 +59,18 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
                 canAttack = true;
                 _dir = Vector2.zero;
                 handle.anchoredPosition = Vector2.zero;
+                var tempColor = ring.color;
+                tempColor.a = 0.5f;
+                ring.color = tempColor;
+                knob.color = tempColor;
+
+                // Reset knob position
+                background.localPosition = new Vector3(0, -600, transform.position.z);
+                handle.anchoredPosition = Vector2.zero;
             }
         }
     }
-
+    
     public void OnDrag (PointerEventData eventData)
     {
         /*
@@ -68,14 +83,25 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
 
     public void OnPointerDown (PointerEventData eventData)
     {
+        /*
+        var tempColor = ring.color;
+        tempColor.a = 1f;
+        ring.color = tempColor;
+        knob.color = tempColor;
         OnDrag(eventData);
+        */
     }
 
     public void OnPointerUp (PointerEventData eventData)
     {
         /*
+        var tempColor = ring.color;
+        tempColor.a = 0.5f;
+        ring.color = tempColor;
+        knob.color = tempColor;
         canAttack = true;
-        _dir = Vector2.zero;
+
+        background.localPosition = new Vector3(0, -600, transform.position.z);
         handle.anchoredPosition = Vector2.zero;
         */
     }
