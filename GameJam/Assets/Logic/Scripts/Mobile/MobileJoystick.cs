@@ -100,8 +100,6 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
         ring.color = tempColor;
         knob.color = tempColor;
         canAttack = true;
-
-        background.localPosition = new Vector3(0, -600, transform.position.z);
         handle.anchoredPosition = Vector2.zero;
         */
     }
