@@ -73,34 +73,34 @@ public class MobileJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     
     public void OnDrag (PointerEventData eventData)
     {
-        /*
+    #if UNITY_EDITOR
         Vector2 direction = eventData.position - joystickPosition;
         _dir = (direction.magnitude > background.sizeDelta.x / 2f) ? direction.normalized : direction / (background.sizeDelta.x / 2f);
         handle.anchoredPosition = (dir * background.sizeDelta.x / 2f) * handleLimit;
         canAttack = false;
-        */
+    #endif
     }
 
     public void OnPointerDown (PointerEventData eventData)
     {
-        /*
+    #if UNITY_EDITOR
         var tempColor = ring.color;
         tempColor.a = 1f;
         ring.color = tempColor;
         knob.color = tempColor;
         OnDrag(eventData);
-        */
+    #endif
     }
 
     public void OnPointerUp (PointerEventData eventData)
     {
-        /*
+    #if UNITY_EDITOR
         var tempColor = ring.color;
         tempColor.a = 0.5f;
         ring.color = tempColor;
         knob.color = tempColor;
         canAttack = true;
         handle.anchoredPosition = Vector2.zero;
-        */
+    #endif
     }
 }

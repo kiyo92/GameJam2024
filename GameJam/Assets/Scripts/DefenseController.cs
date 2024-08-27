@@ -14,6 +14,8 @@ public class DefenseController : MonoBehaviour
     float shootInterval = 1f;
     float currentShootInterval = 0;
 
+    bool isActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +29,7 @@ public class DefenseController : MonoBehaviour
         {
             if (currentShootInterval <= 0)
             {
-                print("atirando");
-                Weapon weapon = Player.inst.curWeapon;
-                ProjectileScriptableObject proj = weapon.projectile;
-
-                float angleOffset = proj.multipleProjectiles.projectileSpreadAngle / 2;
-
-                ShootProjectile(-angleOffset);
+                ShootProjectile();
                 currentShootInterval = shootInterval;
             }
             else
@@ -49,41 +45,43 @@ public class DefenseController : MonoBehaviour
         }
     }
 
-    void ShootProjectile(float angle)
+    void ShootProjectile()
     {
-        Weapon weapon = Player.inst.curWeapon;
+        if (isActive) {
+            Weapon weapon = Player.inst.curWeapon;
 
-        //Rotate the weapon pos so we can get the angle for the projectile to travel at.
-        defenderPosition.transform.LookAt(currentTarget.transform, Vector3.left);
+            //Rotate the weapon pos so we can get the angle for the projectile to travel at.
+            defenderPosition.transform.LookAt(currentTarget.transform, Vector3.left);
 
-        //Instantiate the projectile prefab.
-        GameObject proj = Pool.Spawn(weapon.projectile.projectilePrefab, defenderPosition.transform.position, defenderPosition.transform.rotation);
+            //Instantiate the projectile prefab.
+            GameObject proj = Pool.Spawn(weapon.projectile.projectilePrefab, defenderPosition.transform.position, defenderPosition.transform.rotation);
 
-        //Set the projectile's velocity to make it move.
-        proj.GetComponent<Rigidbody>().velocity = proj.transform.forward * weapon.projectile.speed * 2;
+            //Set the projectile's velocity to make it move.
+            proj.GetComponent<Rigidbody>().velocity = proj.transform.forward * weapon.projectile.speed * 2;
 
-        //Get the projectile script and set the damage and other values.
-        Projectile projScript = proj.GetComponent<Projectile>();
+            //Get the projectile script and set the damage and other values.
+            Projectile projScript = proj.GetComponent<Projectile>();
 
-        //Create the trail object and get the LineRenderer component.
-        GameObject trail = Pool.Spawn(trailPrefab, defenderPosition.transform.position, defenderPosition.transform.rotation);
-        LineRenderer lr = trail.GetComponent<LineRenderer>();
+            //Create the trail object and get the LineRenderer component.
+            GameObject trail = Pool.Spawn(trailPrefab, defenderPosition.transform.position, defenderPosition.transform.rotation);
+            LineRenderer lr = trail.GetComponent<LineRenderer>();
 
-        //Set the end position to be the projectile raycast length from the weapon.
-        lr.SetPosition(0, defenderPosition.transform.position);
-        lr.SetPosition(1, defenderPosition.transform.position + (defenderPosition.transform.forward * weapon.projectile.raycastLength));
+            //Set the end position to be the projectile raycast length from the weapon.
+            lr.SetPosition(0, defenderPosition.transform.position);
+            lr.SetPosition(1, defenderPosition.transform.position + (defenderPosition.transform.forward * weapon.projectile.raycastLength));
 
-        //Now we can rotate the weapon pos back to 0.
-        defenderPosition.transform.localEulerAngles = new Vector3(defenderPosition.transform.localEulerAngles.x, 0, defenderPosition.transform.localEulerAngles.z);
+            //Now we can rotate the weapon pos back to 0.
+            defenderPosition.transform.localEulerAngles = new Vector3(defenderPosition.transform.localEulerAngles.x, 0, defenderPosition.transform.localEulerAngles.z);
 
-        //Set the colour of the trail.
-        lr.startColor = weapon.projectile.trail.trailColor;
-        lr.endColor = weapon.projectile.trail.trailColor;
+            //Set the colour of the trail.
+            lr.startColor = weapon.projectile.trail.trailColor;
+            lr.endColor = weapon.projectile.trail.trailColor;
 
-        //Then destroy the trail.
-        Pool.Destroy(trail, 0.05f);
+            //Then destroy the trail.
+            Pool.Destroy(trail, 0.05f);
 
-        projScript.SetValues(weapon.projectile);
+            projScript.SetValues(weapon.projectile);
+        }
     }
 
     void OnTriggerStay(Collider c) 
